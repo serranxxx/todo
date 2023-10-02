@@ -1,26 +1,154 @@
-import { useState } from "react";
-import axios from "axios";
+import axios from 'axios';
+import { useState } from 'react';
+import { message } from 'antd';
+import { generateRandomId } from '../helpers/getRandomId';
 
-axios.defaults.baseURL = "https://6516149809e3260018c966c1.mockapi.io/taskify/"
+export function useTasksApi() {
 
-export const useAxios = () => {
-  const [response, setResponse] = useState(undefined);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const operation = async (params) => {
+  const api = axios.create({
+    baseURL: 'https://6516149809e3260018c966c1.mockapi.io/taskify',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+  const handleApiError = (error) => {
+    console.error('Error:', error);
+    message.error('Something went wrong, please try again');
+    setError(error);
+  }
+
+  const newUser = async (username, password, name, avatar, lastname) => {
     try {
-      // setLoading(true);
-      const result = await axios.request(params);
-      setResponse(result);
+      setLoading(true);
+      const data = {
+        name: name,
+        lastname: lastname,
+        password: password,
+        email: username,
+        avatar: avatar,
+        id: generateRandomId(),
+      };
+
+      await api.post('/users', data)
+      message.success('User created')
+      setLoading(false)
+      return true
+
     } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
+      handleApiError(error)
+      setLoading(false)
+      return false
     }
-  };
+  }
 
-  return { response, error, loading, operation, setLoading };
-};
+  const onLogin = async (username, password, login, navigate) => {
+    try {
+      setLoading(true);
 
-export default useAxios;
+      const response = await api.get('/users');
+      const user = response.data.find(user => user.email === username)
+      if (user) {
+        if (user.password === password) {
+          login(user.email, user.name, user.lastname, user.id, user.avatar)
+          navigate('/home', {
+            replace: true
+          })
+
+        } else message.error('User not found')
+      } else message.error('User not found')
+
+      setLoading(false)
+    } catch (error) {
+      handleApiError(error)
+      setLoading(false)
+    }
+  }
+
+
+  const getTasks = async (user, setTasks) => {
+    try {
+      setLoading(true);
+
+      const response = await api.get('/tasks');
+      const mytasks = response.data.filter((task) => task.createdBy === user._id);
+
+      if (mytasks) {
+        setTasks(mytasks);
+      } else {
+        message.error("It seems that you don't have tasks yet");
+      }
+
+      setLoading(false)
+    } catch (error) {
+      handleApiError(error)
+      setLoading(false)
+    }
+  }
+
+  const newtask = async (data, setTaskState) => {
+    try {
+      setLoading(true);
+
+      const response = await api.post('/tasks', data);
+      console.log(response)
+      setTaskState(true)
+
+      setLoading(false)
+      return true
+    } catch (error) {
+      handleApiError(error)
+      setLoading(false)
+      return false
+    }
+  }
+
+  const editTask = async (data, setTaskState) => {
+    try {
+      setLoading(true)
+
+      const response = await api.put(`/tasks/${data.id}`, data)
+      console.log(response)
+      setTaskState(true)
+
+      setLoading(false)
+      return true
+    } catch (error) {
+      handleApiError(error)
+      setLoading(false)
+      return false
+    }
+  }
+
+  const deleteTask = async (data, setTaskState) => {
+    try {
+      setLoading(true)
+
+      const response = await api.delete(`/tasks/${data.id}`)
+      console.log(response)
+      message.success('Task deleted')
+      setTaskState(true)
+
+      setLoading(false)
+      return true
+    } catch (error) {
+      handleApiError(error)
+      setLoading(false)
+      return false
+    }
+  }
+
+  return {
+    newUser,
+    onLogin,
+    getTasks,
+    newtask,
+    editTask,
+    deleteTask,
+    loading,
+    error,
+  }
+}

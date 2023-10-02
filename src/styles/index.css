@@ -24,3 +24,28 @@ code {
 .button:hover {
   transform: translateY(-3px);
 }
+
+.scrollable-div::-webkit-scrollbar {
+  width: 10px;
+  /* Anchura de la barra de desplazamiento */
+}
+
+.scrollable-div::-webkit-scrollbar-track {
+  background: transparent;
+  /* Color de fondo de la pista de la barra de desplazamiento */
+}
+
+.notification {
+  background-color: #dce4f7 !important; /* Cambia el color de fondo a rojo */
+  color: #2e3c59; /* Cambia el color del texto a blanco */
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.select .ant-select-selector {
+  background-color: #e9efff !important;
+  border: 0px solid #000 !important;
+  color: #2e3c59 !important;
+  font-size: 1.3em;
+  /* font-weight: 600 !important; */
+}

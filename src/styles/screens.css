@@ -1,0 +1,36 @@
+@media screen and (max-width: 750px) {
+
+    .web {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+    }
+    
+
+}
+
+@media screen and (min-width: 751px) and (max-width: 1200px) {
+
+    .web {
+        display: flex;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+}
+
+
+@media screen and (min-height: 201px) and (min-width: 1201px) {
+    
+    .web{
+        display: flex;
+    }
+
+    .mobile {
+        display: none;
+    }
+}

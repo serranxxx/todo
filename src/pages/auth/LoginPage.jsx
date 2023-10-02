@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'antd';
-import { ContentLogin } from '../components/login/ContentLogin';
+import { ContentLogin } from './ContentLogin';
 
 export const LoginPage = () => {
     

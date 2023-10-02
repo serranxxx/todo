@@ -1,9 +1,22 @@
 
 import { Checkbox, Form, Input } from 'antd';
-import CustomButton from '../CustomButton';
+import CustomButton from './CustomButton';
 import propTypes from 'prop-types';
 
-const FormLogin = ({ type = 'primary', onSubmit }) => {
+
+/**
+ * Componente que representa un formulario para inicio de sesión
+ * 
+ * Este componente recibe el nombre del botón de submit y la función en la que se 
+ * procesarán los datos del usuario
+ * 
+ * @param {string} text - Nombre que aparecerá en el botón del formulario
+ * @param {Function} onSubmit - Función ligada el formulario
+ * 
+ */
+
+
+const FormLogin = ({ text = 'primary', onSubmit }) => {
 
     const [loginForm] = Form.useForm()
 
@@ -73,10 +86,12 @@ const FormLogin = ({ type = 'primary', onSubmit }) => {
 
             <CustomButton
                 type='primary'
-                text={type}
+                animated={true}
+                text={text}
                 width='80%'
                 height='5vh'
                 backgroundColor='#708ad5'
+                borderRadious='1vh'
                 textColor='#ffffff'
                 fontWeight={600}
                 onClick={() => loginForm.submit()}
@@ -92,7 +107,7 @@ const FormLogin = ({ type = 'primary', onSubmit }) => {
 }
 
 FormLogin.propTypes = {
-    type: propTypes.string, // Nombre de boton del formulario disponibles
+    text: propTypes.string, // Nombre de boton del formulario disponibles
     onClick: propTypes.func, // Función para manejar el evento onClick
 };
 
