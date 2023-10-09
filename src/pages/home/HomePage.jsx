@@ -16,7 +16,6 @@ export const HomePage = () => {
                 </Layout>
             </Layout>
 
-
         </>
     )
 }

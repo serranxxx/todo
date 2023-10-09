@@ -123,13 +123,14 @@ export function useTasksApi() {
     }
   }
 
-  const deleteTask = async (data, setTaskState) => {
+  const deleteTask = async (data, setTaskState, setCollapsed) => {
     try {
       setLoading(true)
 
       const response = await api.delete(`/tasks/${data.id}`)
       console.log(response)
       message.success('Task deleted')
+      setCollapsed(true)
       setTaskState(true)
 
       setLoading(false)

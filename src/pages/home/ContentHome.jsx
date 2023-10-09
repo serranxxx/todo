@@ -41,7 +41,7 @@ export const ContentHome = () => {
             finished: false,
             creationDate: new Date(),
             favorite: false,
-            selecte: false,
+            selected: false,
             id: generateRandomId()
         }
         newtask(data, setTaskState)

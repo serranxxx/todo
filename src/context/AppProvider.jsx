@@ -7,9 +7,10 @@ import { notification } from 'antd'
 const init = () => {
 
     const user = JSON.parse(localStorage.getItem('user'))
+    const logged = JSON.parse(localStorage.getItem('logged'))
 
     return {
-        isLogged: !!user,
+        isLogged: logged,
         user: user,
     }
 }
@@ -34,6 +35,7 @@ export const AppProvider = ({ children }) => {
             className: 'notification'
         })
         localStorage.setItem('user', JSON.stringify(user))
+        localStorage.setItem('logged', JSON.stringify(true))
         dispatch(action)
     }
 
@@ -46,6 +48,7 @@ export const AppProvider = ({ children }) => {
             localStorage.removeItem('user')
         }
         dispatch(action)
+        localStorage.setItem('logged', JSON.stringify(false))
     }
 
     const setMyTasks = (tasks = []) => {

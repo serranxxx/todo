@@ -65,6 +65,7 @@ export const SiderHome = () => {
             setTaskState(false)
         }
     }, [taskState])
+    
 
     useEffect(() => {
         if (currentTask) {
@@ -151,7 +152,7 @@ export const SiderHome = () => {
                                 text={'Save'}
                                 width='25%'
                                 backgroundColor='#2e3c59'
-                                borderRadious='2vh'
+                                borderRadious='1vh'
                                 textColor='#e9efff'
                                 fontWeight={500}
                                 onClick={() => handleNote()}
@@ -164,7 +165,7 @@ export const SiderHome = () => {
                             }}>
                                 <p style={{ fontWeight: 600, color: '#2e3c59', fontSize: '1.1em' }}>Created {formatDate(currentTask.creationDate)}</p>
                                 <Button
-                                    onClick={() => deleteTask(currentTask, setTaskState)}
+                                    onClick={() => deleteTask(currentTask, setTaskState, setCollapsed)}
                                     onMouseEnter={() => setIsTrash(true)} onMouseLeave={() => setIsTrash(false)}
                                     className='button' type='ghost' icon={isTrash ? <BsFillTrashFill size={20} /> : <BsTrash size={20} />} />
                             </Row>
