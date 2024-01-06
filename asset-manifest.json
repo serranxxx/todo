@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todo/static/css/main.892d34a6.css",
+    "main.js": "/todo/static/js/main.e05e9d99.js",
+    "static/media/login-background.svg": "/todo/static/media/login-background.927a4bc70c567375c740.svg",
+    "static/media/avatar-1.svg": "/todo/static/media/avatar-1.f5de550259e213dd2ca1ef9c9c8298ce.svg",
+    "static/media/text-light.svg": "/todo/static/media/text-light.759761e552c044ffd755c725a0ee8156.svg",
+    "static/media/text.svg": "/todo/static/media/text.ee8a103949b48af3a8af04978703c883.svg",
+    "static/media/avatar-2.svg": "/todo/static/media/avatar-2.588c0b5ca893f8ebcfc37151d09d708d.svg",
+    "static/media/avatar-4.svg": "/todo/static/media/avatar-4.79104bb79caf4ae22d9490d164c16509.svg",
+    "static/media/avatar-3.svg": "/todo/static/media/avatar-3.9bbee55468ce628cd05373651a869981.svg",
+    "static/media/light-logo.svg": "/todo/static/media/light-logo.e6c9b03dbb9c41fb0f6a7bbd2c93260e.svg",
+    "static/media/logo.svg": "/todo/static/media/logo.e966e5ead95ab14bc6a3625dcc7ec0e3.svg",
+    "index.html": "/todo/index.html",
+    "main.892d34a6.css.map": "/todo/static/css/main.892d34a6.css.map",
+    "main.e05e9d99.js.map": "/todo/static/js/main.e05e9d99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.892d34a6.css",
+    "static/js/main.e05e9d99.js"
+  ]
+}
