@@ -44,7 +44,8 @@ const CustomButton = ({
         fontWeight: fontWeight,
         borderRadius: borderRadious,
         cursor: 'pointer',
-        transition: 'all 0.35s ease-in-out'
+        transition: 'all 0.35s ease-in-out',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
     };
 
     return (

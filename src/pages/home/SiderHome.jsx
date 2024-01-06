@@ -65,7 +65,7 @@ export const SiderHome = () => {
             setTaskState(false)
         }
     }, [taskState])
-    
+
 
     useEffect(() => {
         if (currentTask) {
@@ -106,13 +106,13 @@ export const SiderHome = () => {
             >
                 <Button
                     onClick={() => setCollapsed(true)}
-                    type='ghost' icon={<AiOutlineClose style={{ color: '#2e3c5960' }} size={20} />}
-                    style={{ display: collapsed ? 'none' : '', position: 'absolute', right: '5px', top: '4px' }} />
+                    type='ghost' icon={<AiOutlineClose style={{ color: '#2e3c5960' }} size={15} />}
+                    style={{ display: collapsed ? 'none' : '', position: 'absolute', right: '5px', top: '10px' }} />
 
                 {
                     !collapsed ?
                         <div style={{
-                            width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: 400, display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'column',
                         }}>
                             <Row style={{
@@ -125,28 +125,53 @@ export const SiderHome = () => {
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     style={{
-                                        width: '80%', fontSize: '2em', fontWeight: 600, color: '#2e3c59',
+                                        width: '80%', fontSize: '1.1em', fontWeight: 600, color: '#2e3c59',
                                         textAlign: 'center', backgroundColor: 'transparent', border: '0px solid #2e3c59'
                                     }} />
 
 
                             </Row>
 
-                            <hr style={{ width: '70%', margin: '5% 0 8% 0', border: '1.5px solid #2e3c5980' }} />
+                            <hr style={{ width: '90%', margin: '5% 0 8% 0', border: '1px solid #2e3c5920' }} />
 
                             <TextArea
                                 className='scrollable-div'
                                 onChange={(e) => setNote(e.target.value)}
                                 value={note}
-                                rows={6}
+                                rows={8}
                                 placeholder='Add note'
                                 style={{
-                                    width: '80%', backgroundColor: '#e9efff', borderRadius: '0vh',
+                                    width: '90%', backgroundColor: '#e9efff', borderRadius: '0vh',
                                     border: '0px solid #000', marginBottom: '5%'
                                 }} />
 
+                            <Row style={{
+                                width: '90%', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                            }}>
+                                <Button
+                                    onClick={() => handleNote()}
+                                    style={{
+                                        borderRadius: '3vh', border: '0px solid #000',
+                                        backgroundColor: '#2e3c59', color: '#E9EFFF'
+                                    }}>
+                                    Save changes
+                                </Button>
+                                <Row style={{
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                }}>
+                                    <p>Delete task</p>
+                                    <Button
+                                        onClick={() => deleteTask(currentTask, setTaskState, setCollapsed)}
+                                        onMouseEnter={() => setIsTrash(true)} onMouseLeave={() => setIsTrash(false)}
+                                        className='button' type='ghost'
+                                        icon={isTrash ? <BsFillTrashFill size={18} />
+                                            : <BsTrash size={18} />} />
+                                </Row>
 
-                            <CustomButton
+                            </Row>
+
+
+                            {/* <CustomButton
                                 type='primary'
                                 animated
                                 text={'Save'}
@@ -156,18 +181,15 @@ export const SiderHome = () => {
                                 textColor='#e9efff'
                                 fontWeight={500}
                                 onClick={() => handleNote()}
-                            />
+                            /> */}
 
 
                             <Row style={{
-                                width: '70%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                flexDirection: 'row', position: 'absolute', bottom: '5px'
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                flexDirection: 'row', position: 'absolute', bottom: '15px'
                             }}>
                                 <p style={{ fontWeight: 600, color: '#2e3c59', fontSize: '1.1em' }}>Created {formatDate(currentTask.creationDate)}</p>
-                                <Button
-                                    onClick={() => deleteTask(currentTask, setTaskState, setCollapsed)}
-                                    onMouseEnter={() => setIsTrash(true)} onMouseLeave={() => setIsTrash(false)}
-                                    className='button' type='ghost' icon={isTrash ? <BsFillTrashFill size={20} /> : <BsTrash size={20} />} />
+
                             </Row>
 
                         </div>
@@ -187,7 +209,7 @@ export const SiderHome = () => {
                     position: 'relative', alignItems: 'center', justifyContent: 'center'
 
                 }}
-                width={'100%'}
+                width={500}
             >
                 <Button
                     onClick={() => setCollapsed(true)}
@@ -197,7 +219,7 @@ export const SiderHome = () => {
                 {
                     !collapsed ?
                         <div style={{
-                            width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: 500, display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'column',
                         }}>
                             <Row style={{
@@ -210,14 +232,14 @@ export const SiderHome = () => {
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     style={{
-                                        width: '80%', fontSize: '2em', fontWeight: 600, color: '#2e3c59',
+                                        width: '80%', fontSize: '1.1em', fontWeight: 600, color: '#2e3c59',
                                         textAlign: 'center', backgroundColor: 'transparent', border: '0px solid #2e3c59'
                                     }} />
 
 
                             </Row>
 
-                            <hr style={{ width: '70%', margin: '5% 0 8% 0', border: '1.5px solid #2e3c5980' }} />
+                            <hr style={{ width: '80%', margin: '5% 0 8% 0', border: '1px solid #2e3c5930' }} />
 
                             <TextArea
                                 className='scrollable-div'
@@ -231,28 +253,38 @@ export const SiderHome = () => {
                                 }} />
 
 
-                            <CustomButton
-                                type='primary'
-                                animated
-                                text={'Save'}
-                                width='25%'
-                                backgroundColor='#2e3c59'
-                                borderRadious='2vh'
-                                textColor='#e9efff'
-                                fontWeight={500}
-                                onClick={() => handleNote()}
-                            />
+                            <Row style={{
+                                width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'space-between'
+                            }}>
+                                <Button
+                                    onClick={() => handleNote()}
+                                    style={{
+                                        borderRadius: '3vh', border: '0px solid #000',
+                                        backgroundColor: '#2e3c59', color: '#E9EFFF'
+                                    }}>
+                                    Save changes
+                                </Button>
+                                <Row style={{
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                }}>
+                                    <p>Delete task</p>
+                                    <Button
+                                        onClick={() => deleteTask(currentTask, setTaskState, setCollapsed)}
+                                        onMouseEnter={() => setIsTrash(true)} onMouseLeave={() => setIsTrash(false)}
+                                        className='button' type='ghost'
+                                        icon={isTrash ? <BsFillTrashFill size={18} />
+                                            : <BsTrash size={18} />} />
+                                </Row>
+
+                            </Row>
 
 
                             <Row style={{
-                                width: '70%', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                 flexDirection: 'row', position: 'absolute', bottom: '5px'
                             }}>
                                 <p style={{ fontWeight: 600, color: '#2e3c59', fontSize: '1.1em' }}>Created {formatDate(currentTask.creationDate)}</p>
-                                <Button
-                                    onClick={() => deleteTask(currentTask, setTaskState)}
-                                    onMouseEnter={() => setIsTrash(true)} onMouseLeave={() => setIsTrash(false)}
-                                    className='button' type='ghost' icon={isTrash ? <BsFillTrashFill size={20} /> : <BsTrash size={20} />} />
+
                             </Row>
 
                         </div>

@@ -53,10 +53,10 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
             }}>
 
                 <Col style={{ width: '49%' }}>
-                    <p style={{
+                    {/* <p style={{
                         width: '100%', margin: '1% 0 2% 0', color: '#242021',
                         fontWeight: 500
-                    }}>Name</p>
+                    }}>Name</p> */}
                     <Form.Item
                         //   label="Username"
                         name="name"
@@ -68,15 +68,20 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                         ]}
                         style={{ width: '100%', margin: '0 0 1% 0' }}
                     >
-                        <Input style={{ width: '100%', height: '5vh' }} />
+                        <Input
+                            placeholder='Name'
+                            style={{
+                                width: '100%', height: '5vh',
+                                borderRadius: '3vh 0 0 3vh'
+                            }} />
                     </Form.Item>
                 </Col>
 
                 <Col style={{ width: '49%' }}>
-                    <p style={{
+                    {/* <p style={{
                         width: '100%', margin: '1% 0 2% 0', color: '#242021',
                         fontWeight: 500
-                    }}>Last name</p>
+                    }}>Last name</p> */}
                     <Form.Item
                         //   label="Username"
                         name="lastname"
@@ -88,7 +93,12 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                         ]}
                         style={{ width: '100%', margin: '0 0 1% 0' }}
                     >
-                        <Input style={{ width: '100%', height: '5vh' }} />
+                        <Input
+                            placeholder='Last name'
+                            style={{
+                                width: '100%', height: '5vh',
+                                borderRadius: '0 3vh 3vh 0'
+                            }} />
                     </Form.Item>
                 </Col>
 
@@ -101,10 +111,10 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
             }}>
 
                 <Col style={{ width: '49%' }}>
-                    <p style={{
+                    {/* <p style={{
                         width: '100%', margin: '1% 0 2% 0', color: '#242021',
                         fontWeight: 500
-                    }}>Email</p>
+                    }}>Email</p> */}
                     <Form.Item
                         //   label="Username"
                         name="email"
@@ -116,16 +126,21 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                         ]}
                         style={{ width: '100%', margin: '0 0 1% 0' }}
                     >
-                        <Input style={{ width: '100%', height: '5vh' }} />
+                        <Input
+                            placeholder='Username'
+                            style={{
+                                width: '100%', height: '5vh',
+                                borderRadius: '3vh 0 0 3vh'
+                            }} />
                     </Form.Item>
                 </Col>
 
 
                 <Col style={{ width: '49%' }}>
-                    <p style={{
+                    {/* <p style={{
                         width: '100%', margin: '2% 0 1% 0', color: '#242021',
                         fontWeight: 500
-                    }}>Password</p>
+                    }}>Password</p> */}
 
                     <Form.Item
                         //   label="Password"
@@ -138,7 +153,12 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                         ]}
                         style={{ width: '100%', margin: '1% 0 3% 0' }}
                     >
-                        <Input.Password style={{ width: '100%', height: '5vh' }} />
+                        <Input.Password
+                            placeholder='Password'
+                            style={{
+                                width: '100%', height: '5vh',
+                                borderRadius:'0 3vh 3vh 0'
+                            }} />
                     </Form.Item>
                 </Col>
 
@@ -150,9 +170,9 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
 
 
             <p style={{
-                width: '80%', margin: '2% 0 1% 0', color: '#242021',
-                fontWeight: 500
-            }}>Avatar</p>
+                width: '80%', margin: '2% 0 0% 0', color: '#24202160',
+                fontWeight: 400
+            }}>Select avatar</p>
 
             <Form.Item
 
@@ -169,9 +189,10 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                                 style={{
                                     height: '10vh', aspectRatio: '1/1', overflow: 'hidden', margin: '0.5vh',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    borderRadius:'3vh',
                                     backgroundColor: avatar.value === Avatar ? '#708ad590' : ''
                                 }} >
-                                <img src={avatar.image} style={{ height: '100%' }} />
+                                <img src={avatar.image} style={{ height: '100%' , borderRadius:'2.5vh',}} />
                             </Button>
 
                         ))
@@ -185,9 +206,9 @@ const FormNewUser = ({ text = 'primary', onSubmit }) => {
                 animated={true}
                 text={text}
                 width='80%'
-                height='5vh'
+                height='4.5vh'
                 backgroundColor='#708ad5'
-                borderRadious='1vh'
+                borderRadious='3vh'
                 textColor='#ffffff'
                 fontWeight={600}
                 onClick={() => loginForm.submit()}

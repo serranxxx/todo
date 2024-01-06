@@ -11,9 +11,9 @@ export const AppRouter = () => {
   return (
     <Routes>
 
-      <Route path="/" Component={withAuth(LoginPage)} />
-      <Route path="/login" Component={withAuth(LoginPage)} />
-      <Route path="/home" Component={withAuth(HomePage)} />
+      <Route path="/todo" Component={withAuth(LoginPage)} />
+      <Route path="/todo/login" Component={withAuth(LoginPage)} />
+      <Route path="/todo/home" Component={withAuth(HomePage)} />
 
     </Routes >
   )

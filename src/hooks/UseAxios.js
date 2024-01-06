@@ -54,7 +54,7 @@ export function useTasksApi() {
       if (user) {
         if (user.password === password) {
           login(user.email, user.name, user.lastname, user.id, user.avatar)
-          navigate('/home', {
+          navigate('/todo/home', {
             replace: true
           })
 

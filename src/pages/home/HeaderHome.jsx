@@ -39,7 +39,7 @@ export const HeaderApp = () => {
 
     const onLogout = () => {
         logout()
-        navigate('/login', {
+        navigate('/todo/login', {
             replace: true
         })
     }
@@ -58,21 +58,21 @@ export const HeaderApp = () => {
                 user ?
                     <Menu style={{
                         backgroundColor: '#e9efff',
-                        width: 300,
-                        border: '1.5px solid #00000040',
+                        width: 300,borderRadius:'3vh'
+                        // border: '1.5px solid #00000040',
                     }}>
                         <Menu.Item
-                            style={{ cursor: 'default', border: '1.5px solid #2e3c5930', }}
+                            style={{ cursor: 'default', border: '0px solid #2e3c5930', borderRadius:'2.5vh 2.5vh 0 0'}}
                         >
                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'left', marginTop: '0' }}>
-                                <Avatar shape="square" size={50} src={selectAvatar(user.avatar)} style={{ marginLeft: 0, marginRight: 15, borderRadius: '0.5vw' }} />
+                                <Avatar shape="square" size={50} src={selectAvatar(user.avatar)} style={{ marginLeft: 0, marginRight: 15, borderRadius: '50%' }} />
                                 <p style={{ fontWeight: 'bold', wordBreak: 'break-word', fontSize: '1.3em', color: '#2e3c59' }}>{user.name} {user.lastname}</p>
                             </div>
                         </Menu.Item>
 
                         <Menu.Item
                             style={{
-                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '1.5px solid #2e3c5930',
+                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '0px solid #2e3c5930',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center'
                             }}>
                             <Row style={{
@@ -89,7 +89,7 @@ export const HeaderApp = () => {
 
                         <Menu.Item
                             style={{
-                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '1.5px solid #2e3c5930',
+                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '0px solid #2e3c5930',
                                 display: 'flex', alignItems: 'center', justifyContent: 'center'
                             }}>
                             <Row style={{
@@ -111,7 +111,8 @@ export const HeaderApp = () => {
                         <Menu.Item
                             onClick={onLogout}
                             style={{
-                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '1.5px solid #2e3c5930',
+                                marginTop: '0.4em', height: 50, cursor: 'pointer', border: '0px solid #2e3c5930',
+                                borderRadius:'0 0 2.5vh 2.5vh'
                             }}>
                             <Row style={{
                                 width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'row',
@@ -228,7 +229,7 @@ export const HeaderApp = () => {
             </Header>
 
             {/*Drawer que susituye al menú en una resolución web*/}
-            {/* <DrawerMenu user={user} logout={logout} TaskCounter={TaskCounter} visible={drawer} setDrawer={setDrawer} /> */}
+            <DrawerMenu user={user} logout={logout} TaskCounter={TaskCounter} visible={drawer} setDrawer={setDrawer} />
         </>
 
 

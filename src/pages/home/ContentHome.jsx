@@ -5,6 +5,7 @@ import { appContext } from '../../context';
 import { generateRandomId } from '../../helpers/getRandomId';
 import { AiOutlinePlus } from "react-icons/ai";
 import { list } from '../../helpers/getLists';
+import { IoMdAdd } from "react-icons/io";
 import CustomButton from '../../components/CustomButton';
 import { useTasksApi } from '../../hooks/UseAxios';
 const { Content } = Layout;
@@ -46,6 +47,20 @@ export const ContentHome = () => {
         }
         newtask(data, setTaskState)
         setNewTask('')
+    }
+
+    const borderRadiusFeat = (name) => {
+        switch (name) {
+            case 'Tasks':
+                return "3vh 0 0 3vh"
+            case 'Finished':
+                return "0"
+            case 'Favorites':
+                return "0 3vh 3vh 0"
+
+            default:
+                break;
+        }
     }
 
 
@@ -101,7 +116,8 @@ export const ContentHome = () => {
                 style={{
                     alignItems: 'center', justifyContent: 'flex-start',
                     flexDirection: 'column', marginTop: '13vh',
-                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '10vh'
+                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '9vh',
+                    // border:'1px solid red'
                 }}
             >
 
@@ -124,11 +140,13 @@ export const ContentHome = () => {
 
                 </div>
 
+
+
                 <div
                     className='scrollable-div'
                     style={{
                         height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: '2% 0 0 0',
-                        flexDirection: 'column', overflowY: 'scroll'
+                        flexDirection: 'column', overflowY: 'scroll', zIndex: 0
                     }}>
                     {
                         myTasks ? <CustomTask data={filteredTasks} setTaskState={setTaskState} currentTask={currentTask} />
@@ -138,11 +156,12 @@ export const ContentHome = () => {
                 </div>
 
                 <div style={{
-                    width: '95%', height: '7vh',
-                    position: 'absolute', bottom: '-60px',
+                    width: '95%', height: '6vh',
+                    position: 'absolute', bottom: '-40px',
+                    backdropFilter: 'blur(16px)',
                     // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
                     backgroundColor: '#2e3c5960',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
                 }}>
                     <Input
                         onPressEnter={() => postTask()}
@@ -150,25 +169,25 @@ export const ContentHome = () => {
                         onChange={(e) => setNewTask(e.target.value)}
                         value={newTask}
                         style={{
-                            height: '100%', width: '95%', backgroundColor: 'transparent', border: '0px solid #000',
-                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '0vh'
+                            height: '100%', width: '100%', backgroundColor: 'transparent', border: '0px solid #000',
+                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1
                         }} />
 
 
-                    <CustomButton
-                        type='primary'
-                        text={''}
-                        width='5%'
-                        height='100%'
-                        backgroundColor='#2e3c59'
-                        borderRadious='0'
-                        textColor='#ffffff'
-                        fontWeight={600}
+                    <Button
                         onClick={() => postTask()}
-                        icon={<AiOutlinePlus size={20} style={{ color: '#e9efff' }} />}
+                        style={{
+                            marginRight: '5px', borderRadius: '50%',
+                            backgroundColor: '#2e3c59', border: '0px solid #2e3c59',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center'
+                        }}
+                        icon={<IoMdAdd size={20} style={{ color: '#e9efff', }} />}
                     />
 
+
                 </div>
+
+
 
             </Content>
 
@@ -194,10 +213,12 @@ export const ContentHome = () => {
                             list.map((list) => (
                                 <Radio.Button
                                     style={{
-                                        width: '30%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        width: '32%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         backgroundColor: selectedList === list.name ? '#2e3c59' : 'transparent',
-                                        border: selectedList === list.name ? '0px solid #000' : '', borderRadius: 0,
-                                        fontWeight: 600, color: selectedList === list.name ? '#e9efff' : ''
+                                        border: selectedList === list.name ? '0px solid #000' : '',
+                                        fontWeight: 600, color: selectedList === list.name ? '#e9efff' : '',
+                                        borderRadius: borderRadiusFeat(list.name)
+
                                     }}
                                     key={list.name} value={list.name}>
                                     {list.name}
@@ -222,11 +243,12 @@ export const ContentHome = () => {
                 </div>
 
                 <div style={{
-                    width: '90%', height: '7vh',
-                    position: 'absolute', bottom: '-60px',
+                    width: '95%', height: '6vh',
+                    position: 'absolute', bottom: '-40px',
+                    backdropFilter: 'blur(16px)',
                     // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
                     backgroundColor: '#2e3c5960',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                    display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
                 }}>
                     <Input
                         onPressEnter={() => postTask()}
@@ -234,23 +256,21 @@ export const ContentHome = () => {
                         onChange={(e) => setNewTask(e.target.value)}
                         value={newTask}
                         style={{
-                            height: '100%', width: '85%', backgroundColor: 'transparent', border: '0px solid #000',
-                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '0vh'
+                            height: '100%', width: '100%', backgroundColor: 'transparent', border: '0px solid #000',
+                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1
                         }} />
 
 
-                    <CustomButton
-                        type='primary'
-                        text={''}
-                        width='15%'
-                        height='100%'
-                        backgroundColor='#2e3c59'
-                        borderRadious='0'
-                        textColor='#ffffff'
-                        fontWeight={600}
+                    <Button
                         onClick={() => postTask()}
-                        icon={<AiOutlinePlus size={20} style={{ color: '#e9efff' }} />}
+                        style={{
+                            marginRight: '5px', borderRadius: '50%',
+                            backgroundColor: '#2e3c59', border: '0px solid #2e3c59',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center'
+                        }}
+                        icon={<IoMdAdd size={20} style={{ color: '#e9efff', }} />}
                     />
+
 
                 </div>
 

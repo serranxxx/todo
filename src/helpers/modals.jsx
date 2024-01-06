@@ -41,18 +41,18 @@ export const DrawerMenu = ({ user, logout, TaskCounter, visible, setDrawer }) =>
                 }} />
 
                 <p style={{
-                    width: '80%', textAlign: 'center', fontSize: '3em', fontWeight: 700, margin: '3% 0 0 0'
+                    width: '80%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '3% 0 0 0'
                 }}>{user.name}</p>
 
                 <p style={{
-                    width: '80%', textAlign: 'center', fontSize: '3em', fontWeight: 700, margin: '0 0 3% 0'
+                    width: '80%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '0 0 3% 0'
                 }}>{user.lastname}</p>
 
-                <hr style={{ width: '70%', border: '1px solid #000' }} />
+                <hr style={{ width: '60%', border: '1px solid #00000020' }} />
 
                 <div
                     style={{
-                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #000',
+                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #00000020',
                         display: 'flex', alignItems: 'center', justifyContent: 'center', width: '70%',
                         borderRadius: '2vh'
                     }}>
@@ -70,7 +70,7 @@ export const DrawerMenu = ({ user, logout, TaskCounter, visible, setDrawer }) =>
 
                 <div
                     style={{
-                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #000',
+                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #00000020',
                         display: 'flex', alignItems: 'center', justifyContent: 'center', width: '70%',
                         borderRadius: '2vh'
                     }}>
@@ -93,7 +93,7 @@ export const DrawerMenu = ({ user, logout, TaskCounter, visible, setDrawer }) =>
                 <div
                     onClick={() => logout()}
                     style={{
-                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #000',
+                        marginTop: '2vh', height: 50, cursor: 'pointer', border: '2px solid #00000020',
                         display: 'flex', alignItems: 'center', justifyContent: 'center', width: '70%',
                         borderRadius: '2vh'
                     }}>

@@ -63,7 +63,8 @@ export const ContentLogin = () => {
 
                 <div style={{
                     width: '60vh', height: '80%', left: '170px', position: 'absolute',
-                    boxShadow: '0px 0px 18px #00000010', backgroundColor: '#f1f6ff',
+                    // boxShadow: '0px 0px 18px #00000010', 
+                    backgroundColor: '#f1f6ff',
                     borderRadius: '3vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexDirection: 'column'
                 }}>
@@ -81,7 +82,7 @@ export const ContentLogin = () => {
                     </Row>
 
 
-                    <hr style={{ width: '70%', border: '2px solid #24202130', margin: '10% 0 2% 0', borderRadius: '2vh' }} />
+                    <hr style={{ width: '70%', border: '1px solid #24202120', margin: '10% 0 2% 0', borderRadius: '3vh' }} />
 
                     {
                         isLogin ? // isLogin es un estado que indica si se inicia sesión o se crea un nuevo usuario

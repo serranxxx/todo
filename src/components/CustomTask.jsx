@@ -64,26 +64,30 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                             <>
                                 {/*Card ajustada a resolución web*/}
                                 <div
-                                    className='button web'
+                                    className='web'
 
                                     style={{
                                         width: '95%', height: '6vh', marginBottom: '1%',
                                         alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row',
-                                        backgroundColor: '#dce4f7', transition: 'all 0.35s ease-in-out', cursor: 'pointer'
+                                        backgroundColor: '#dce4f7', transition: 'all 0.35s ease-in-out', cursor: 'pointer',
+                                        borderRadius: '3vh',
                                     }}>
-                                    <div style={{
+
+                                    <Button onClick={() => handleFinished(task.id)}
+                                        icon={task.finished ? <AiOutlineCheck size={15} /> : <></>}
+                                        type='ghost' style={{
+                                            borderRadius: '50%', border: '3px solid #2e3c59', height: 25, width: 25,
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            marginLeft: '10px'
+                                        }} />
+                                    {/* <div style={{
                                         width: '7%', height: '100%', display: 'flex',
                                         alignItems: 'center', justifyContent: 'center'
                                     }}>
 
 
-                                        <Button onClick={() => handleFinished(task.id)}
-                                            icon={task.finished ? <AiOutlineCheck size={15} /> : <></>}
-                                            type='ghost' style={{
-                                                borderRadius: '50%', border: '3px solid #2e3c59', height: 25, width: 25,
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center'
-                                            }} />
-                                    </div>
+                                        
+                                    </div> */}
 
                                     <div
                                         onClick={() => currentTask(task.id)}
@@ -97,44 +101,34 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                         }}>{task.name}</p>
                                     </div>
 
-                                    <div style={{
-                                        width: '7%', height: '100%', display: 'flex',
-                                        alignItems: 'center', justifyContent: 'center'
-                                    }}>
-                                        <Button
-                                            onClick={() => handleFavorite(task.id)}
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center', justifyContent: 'center'
-                                            }}
-                                            icon={task.favorite ? <AiFillStar size={30} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={30} style={{ color: '#2e3c59' }} />}
-                                            type='ghost' />
-                                    </div>
+                                    <Button
+                                        onClick={() => handleFavorite(task.id)}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center', justifyContent: 'center',
+                                            marginRight: '10px'
+                                        }}
+                                        icon={task.favorite ? <AiFillStar size={30} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={30} style={{ color: '#2e3c5960' }} />}
+                                        type='ghost' />
 
                                 </div>
 
                                 {/*Card ajustada a resolución móvil*/}
                                 <div
-                                    className='button mobile'
+                                    className='mobile'
                                     style={{
                                         width: '92%', height: '6vh', marginBottom: '2%',
                                         alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row',
-                                        backgroundColor: '#dce4f7', transition: 'all 0.35s ease-in-out', cursor: 'pointer'
+                                        backgroundColor: '#dce4f7', transition: 'all 0.35s ease-in-out', cursor: 'pointer',
+                                        borderRadius: '3vh'
                                     }}>
-                                    <div style={{
-                                        width: '15%', height: '100%', display: 'flex',
-                                        alignItems: 'center', justifyContent: 'center'
-                                    }}>
-
-
-                                        <Button onClick={() => handleFinished(task.id)}
-                                            icon={task.finished ? <AiOutlineCheck size={15} /> : <></>}
-                                            type='ghost' style={{
-                                                borderRadius: '50%', border: '3px solid #2e3c59', height: 25, width: 25,
-                                                display: 'flex', alignItems: 'center', justifyContent: 'center'
-                                            }} />
-
-                                    </div>
+                                    <Button onClick={() => handleFinished(task.id)}
+                                        icon={task.finished ? <AiOutlineCheck size={15} /> : <></>}
+                                        type='ghost' style={{
+                                            borderRadius: '50%', border: '3px solid #2e3c59', height: 25, width: 25,
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            marginLeft:'10px'
+                                        }} />
 
                                     <div
                                         onClick={() => currentTask(task.id)}
@@ -148,19 +142,15 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                         }}>{task.name}</p>
                                     </div>
 
-                                    <div style={{
-                                        width: '15%', height: '100%', display: 'flex',
-                                        alignItems: 'center', justifyContent: 'center'
-                                    }}>
-                                        <Button
+                                    <Button
                                             onClick={() => handleFavorite(task.id)}
                                             style={{
                                                 display: 'flex',
-                                                alignItems: 'center', justifyContent: 'center'
+                                                alignItems: 'center', justifyContent: 'center',
+                                                marginRight:'10px'
                                             }}
-                                            icon={task.favorite ? <AiFillStar size={30} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={30} style={{ color: '#2e3c59' }} />}
+                                            icon={task.favorite ? <AiFillStar size={30} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={30} style={{ color: '#2e3c5960' }} />}
                                             type='ghost' />
-                                    </div>
 
                                 </div>
                             </>
