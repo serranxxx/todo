@@ -5,7 +5,7 @@ import { appContext } from '../context';
 const withAuth = (WrappedComponent) => {
   return (props) => {
     const { isLogged } = useContext(appContext);
-    const redirectPath = isLogged ? '/home' : '/login';
+    const redirectPath = isLogged ? '/todo/home' : '/todo/login';
 
     return (
       <>
