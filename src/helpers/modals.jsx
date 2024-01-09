@@ -37,15 +37,15 @@ export const DrawerMenu = ({ user, logout, TaskCounter, visible, setDrawer }) =>
                 }}>
 
                 <Avatar src={selectAvatar(user.avatar)} shape='square' style={{
-                    width: '40%', height: '25vh',
+                    width: '180px', height: '180px', borderRadius:'3vh'
                 }} />
 
                 <p style={{
-                    width: '80%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '3% 0 0 0'
+                    width: '90%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '3% 0 0 0'
                 }}>{user.name}</p>
 
                 <p style={{
-                    width: '80%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '0 0 3% 0'
+                    width: '90%', textAlign: 'center', fontSize: '1.5em', fontWeight: 700, margin: '0 0 3% 0'
                 }}>{user.lastname}</p>
 
                 <hr style={{ width: '60%', border: '1px solid #00000020' }} />

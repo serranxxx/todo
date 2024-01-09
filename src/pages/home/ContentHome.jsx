@@ -196,8 +196,8 @@ export const ContentHome = () => {
                 className='mobile'
                 style={{
                     alignItems: 'center', justifyContent: 'flex-start',
-                    flexDirection: 'column', marginTop: '13vh',
-                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '10vh'
+                    flexDirection: 'column', marginTop: '10vh',
+                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '2vh'
                 }}
             >
 
@@ -244,10 +244,10 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '95%', height: '6vh',
-                    position: 'absolute', bottom: '-40px',
+                    position: 'absolute', bottom: '0px',
                     backdropFilter: 'blur(16px)',
                     // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
-                    backgroundColor: '#2e3c5960',
+                    backgroundColor: '#2e3c59',
                     display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
                 }}>
                     <Input
@@ -257,18 +257,19 @@ export const ContentHome = () => {
                         value={newTask}
                         style={{
                             height: '100%', width: '100%', backgroundColor: 'transparent', border: '0px solid #000',
-                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1
+                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1,
+                            paddingLeft:'5%'
                         }} />
 
 
                     <Button
                         onClick={() => postTask()}
                         style={{
-                            marginRight: '5px', borderRadius: '50%',
-                            backgroundColor: '#2e3c59', border: '0px solid #2e3c59',
+                            marginRight: '10px', borderRadius: '50%',
+                            backgroundColor: '#E9EFFF', border: '0px solid #2e3c59',
                             display: 'flex', alignItems: 'center', justifyContent: 'center'
                         }}
-                        icon={<IoMdAdd size={20} style={{ color: '#e9efff', }} />}
+                        icon={<IoMdAdd size={20} style={{ color: '#2e3c59', }} />}
                     />
 
 

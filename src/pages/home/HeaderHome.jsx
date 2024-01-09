@@ -200,7 +200,7 @@ export const HeaderApp = () => {
                     padding: 0,
                     position: 'fixed', zIndex: 1, width: '100%',
                     backgroundColor: `#2e3c59`,
-                    height: '12vh', alignItems: 'center', justifyContent: 'center',
+                    height: '9vh', alignItems: 'center', justifyContent: 'center',
                 }}
             >
                 {

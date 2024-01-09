@@ -205,21 +205,21 @@ export const SiderHome = () => {
                 collapsedWidth={0}
                 style={{
                     height: 'auto',
-                    backgroundColor: `#dce4f7`, marginTop: '12vh',
+                    backgroundColor: `#dce4f7`, marginTop: '9vh',
                     position: 'relative', alignItems: 'center', justifyContent: 'center'
 
                 }}
-                width={500}
+                width={'100%'}
             >
                 <Button
                     onClick={() => setCollapsed(true)}
                     type='ghost' icon={<AiOutlineClose style={{ color: '#2e3c5960' }} size={20} />}
-                    style={{ display: collapsed ? 'none' : '', position: 'absolute', right: '5px', top: '4px' }} />
+                    style={{ display: collapsed ? 'none' : '', position: 'absolute', right: '5px', top: '8px' }} />
 
                 {
                     !collapsed ?
                         <div style={{
-                            width: 500, display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: 450, display: 'flex', alignItems: 'center', justifyContent: 'center',
                             flexDirection: 'column',
                         }}>
                             <Row style={{
