@@ -14,7 +14,7 @@ export const HomePage = () => {
                 <Layout style={{ backgroundColor: '#e9efff', height: '100vh' }}>
                     <ContentHome />
                     <SiderHome />
-                    {/* <FooterHome /> */}
+                    <FooterHome />
                 </Layout>
             </Layout>
 

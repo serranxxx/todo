@@ -201,39 +201,6 @@ export const ContentHome = () => {
                 }}
             >
 
-                
-                <div style={{
-                    width: '90%', height: '5vh',
-                    // position: 'absolute', bottom: '0px',
-                    backdropFilter: 'blur(16px)',
-                    // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
-                    backgroundColor: '#2e3c5980',
-                    display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
-                }}>
-                    <Input
-                        onPressEnter={() => postTask()}
-                        placeholder='+  Add new task'
-                        onChange={(e) => setNewTask(e.target.value)}
-                        value={newTask}
-                        style={{
-                            height: '100%', width: '100%', backgroundColor: 'transparent', border: '0px solid #000',
-                            fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1,
-                            paddingLeft:'5%'
-                        }} />
-
-
-                    <Button
-                        onClick={() => postTask()}
-                        style={{
-                            marginRight: '5px', borderRadius: '50%',
-                            backgroundColor: '#E9EFFF', border: '0px solid #2e3c59',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center'
-                        }}
-                        icon={<IoMdAdd size={20} style={{ color: '#2e3c59', }} />}
-                    />
-
-
-                </div>
 
                 <div style={{ width: '93%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0' }}>
                     <Radio.Group
