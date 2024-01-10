@@ -56,11 +56,11 @@ export const FooterHome = (props) => {
         }}>
 
             <div style={{
-                width: '95%', height: '5vh',
+                width: '100%', height: '5vh',
                 // position: 'absolute', bottom: '0px',
                 backdropFilter: 'blur(16px)',
                 // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
-                backgroundColor: '#2e3c5980',
+                backgroundColor: '#2e3c59',
                 display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
             }}>
                 <Input
