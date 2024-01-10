@@ -201,53 +201,13 @@ export const ContentHome = () => {
                 }}
             >
 
-                <div style={{ width: '95%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0' }}>
-                    <Radio.Group
-                        onChange={(e) => setSelectedList(e.target.value)}
-                        value={selectedList}
-                        className='select'
-                        style={{ width: '100%', fontSize: '1.5em', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-
-                    >
-                        {
-                            list.map((list) => (
-                                <Radio.Button
-                                    style={{
-                                        width: '32%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                        backgroundColor: selectedList === list.name ? '#2e3c59' : 'transparent',
-                                        border: selectedList === list.name ? '0px solid #000' : '',
-                                        fontWeight: 600, color: selectedList === list.name ? '#e9efff' : '',
-                                        borderRadius: borderRadiusFeat(list.name)
-
-                                    }}
-                                    key={list.name} value={list.name}>
-                                    {list.name}
-                                </Radio.Button>
-                            ))
-                        }
-                    </Radio.Group>
-
-                </div>
-
-                <div
-                    className='scrollable-div'
-                    style={{
-                        height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: '2% 0 0 0',
-                        flexDirection: 'column', overflowY: 'scroll'
-                    }}>
-                    {
-                        myTasks ? <CustomTask data={filteredTasks} setTaskState={setTaskState} currentTask={currentTask} />
-                            : <></>
-                    }
-
-                </div>
-
+                
                 <div style={{
-                    width: '95%', height: '6vh',
-                    position: 'absolute', bottom: '0px',
+                    width: '90%', height: '5vh',
+                    // position: 'absolute', bottom: '0px',
                     backdropFilter: 'blur(16px)',
                     // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
-                    backgroundColor: '#2e3c59',
+                    backgroundColor: '#2e3c5980',
                     display: 'flex', alignItems: 'center', justifyContent: 'flex-start', borderRadius: '3vh'
                 }}>
                     <Input
@@ -265,7 +225,7 @@ export const ContentHome = () => {
                     <Button
                         onClick={() => postTask()}
                         style={{
-                            marginRight: '10px', borderRadius: '50%',
+                            marginRight: '5px', borderRadius: '50%',
                             backgroundColor: '#E9EFFF', border: '0px solid #2e3c59',
                             display: 'flex', alignItems: 'center', justifyContent: 'center'
                         }}
@@ -274,6 +234,54 @@ export const ContentHome = () => {
 
 
                 </div>
+
+                <div style={{ width: '93%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0' }}>
+                    <Radio.Group
+                        onChange={(e) => setSelectedList(e.target.value)}
+                        value={selectedList}
+                        className='select'
+                        style={{ width: '100%', fontSize: '1.5em', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+
+                    >
+                        {
+                            list.map((list) => (
+                                <Radio.Button
+                                    style={{
+                                        width: '32%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        backgroundColor: selectedList === list.name ? '#2e3c5980' : 'transparent',
+                                        border: selectedList === list.name ? '0px solid #000' : '',
+                                        fontWeight: 600, color: selectedList === list.name ? '#e9efff' : '',
+                                        borderRadius: borderRadiusFeat(list.name)
+
+                                    }}
+                                    key={list.name} value={list.name}>
+                                    {list.name}
+                                </Radio.Button>
+                            ))
+                        }
+                    </Radio.Group>
+
+                </div>
+
+                <hr style={{
+                    width:'90%', border:'1px solid #2e3c5980'
+                }}/>
+
+
+                <div
+                    className='scrollable-div'
+                    style={{
+                        height: 'auto', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', padding: '2% 0 0 0',
+                        flexDirection: 'column', overflowY: 'scroll'
+                    }}>
+                    {
+                        myTasks ? <CustomTask data={filteredTasks} setTaskState={setTaskState} currentTask={currentTask} />
+                            : <></>
+                    }
+
+                </div>
+
+                
 
             </Content>
         </>
