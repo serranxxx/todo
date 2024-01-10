@@ -202,7 +202,10 @@ export const ContentHome = () => {
             >
 
 
-                <div style={{ width: '93%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0' }}>
+                <div style={{
+                    width: '93%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0',
+                    zIndex:0
+                }}>
                     <Radio.Group
                         onChange={(e) => setSelectedList(e.target.value)}
                         value={selectedList}
@@ -231,8 +234,8 @@ export const ContentHome = () => {
                 </div>
 
                 <hr style={{
-                    width:'90%', border:'1px solid #2e3c5980'
-                }}/>
+                    width: '90%', border: '1px solid #2e3c5980'
+                }} />
 
 
                 <div
@@ -248,7 +251,7 @@ export const ContentHome = () => {
 
                 </div>
 
-                
+
 
             </Content>
         </>
