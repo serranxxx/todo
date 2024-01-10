@@ -57,6 +57,7 @@ export const FooterHome = (props) => {
 
             <div style={{
                 width: '100%', height: '5vh',
+                marginBottom:'4vh',
                 // position: 'absolute', bottom: '0px',
                 backdropFilter: 'blur(16px)',
                 // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
@@ -71,7 +72,8 @@ export const FooterHome = (props) => {
                     style={{
                         height: '100%', width: '100%', backgroundColor: 'transparent', border: '0px solid #000',
                         fontSize: '1.3em', color: '#fff', padding: '2%', borderRadius: '3vh', zIndex: 1,
-                        paddingLeft: '5%'
+                        paddingLeft: '5%',
+                        // marginBottom:'3vh'
                     }} />
 
 

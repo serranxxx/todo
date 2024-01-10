@@ -1,6 +1,7 @@
 import { Button, Checkbox, Empty, message } from 'antd'
 import React from 'react'
 import { AiOutlineCheck, AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { FaCheck } from "react-icons/fa";
 import { useTasksApi } from '../hooks/UseAxios';
 
 /**
@@ -123,7 +124,7 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                         borderRadius: '3vh'
                                     }}>
                                     <Button onClick={() => handleFinished(task.id)}
-                                        icon={task.finished ? <AiOutlineCheck size={15} /> : <></>}
+                                        icon={task.finished ? <FaCheck size={10} style={{color:'#2e3c5960'}} /> : <></>}
                                         type='ghost' style={{
                                             borderRadius: '50%', border: '3px solid #2e3c5960', height: 20, width: 20,
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',

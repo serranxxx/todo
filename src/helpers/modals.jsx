@@ -27,6 +27,7 @@ export const DrawerMenu = ({ user, logout, TaskCounter, visible, setDrawer }) =>
             open={visible}
             style={{
                 backgroundColor: '#e9efff',
+                zIndex:1
             }}>
 
             <div
