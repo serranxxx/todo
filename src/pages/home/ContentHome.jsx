@@ -116,7 +116,7 @@ export const ContentHome = () => {
                 style={{
                     alignItems: 'center', justifyContent: 'flex-start',
                     flexDirection: 'column', marginTop: '13vh',
-                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '9vh',
+                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '10vh',
                     // border:'1px solid red'
                 }}
             >
@@ -157,7 +157,7 @@ export const ContentHome = () => {
 
                 <div style={{
                     width: '95%', height: '6vh',
-                    position: 'absolute', bottom: '-40px',
+                    position: 'absolute', bottom: '-60px',
                     backdropFilter: 'blur(16px)',
                     // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,
                     backgroundColor: '#2e3c5960',

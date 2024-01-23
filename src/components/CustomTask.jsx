@@ -68,7 +68,7 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                     className='web'
 
                                     style={{
-                                        width: '95%', height: '6vh', marginBottom: '1%',
+                                        width: '95%', height: 'auto', marginBottom: '3%',
                                         alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row',
                                         backgroundColor: '#dce4f7', transition: 'all 0.35s ease-in-out', cursor: 'pointer',
                                         borderRadius: '3vh',
@@ -98,6 +98,7 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                         }}>
                                         <p style={{
                                             fontSize: '1.3em', fontWeight: 500, color: '#2e3c59',
+                                            wordBreak: 'break-word',
                                             textDecoration: task.finished ? 'line-through' : ''
                                         }}>{task.name}</p>
                                     </div>
