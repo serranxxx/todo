@@ -118,17 +118,17 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                 <div
                                     className='mobile'
                                     style={{
-                                        width: '92%', height: '4vh', marginBottom: '4%',
+                                        width: '92%', height: 'auto', marginBottom: '4%',
                                         alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row',
                                         backgroundColor: '#dce4f799', transition: 'all 0.35s ease-in-out', cursor: 'pointer',
                                         borderRadius: '3vh'
                                     }}>
                                     <Button onClick={() => handleFinished(task.id)}
-                                        icon={task.finished ? <FaCheck size={10} style={{color:'#2e3c5960'}} /> : <></>}
+                                        icon={task.finished ? <FaCheck size={10} style={{ color: '#2e3c5960' }} /> : <></>}
                                         type='ghost' style={{
                                             borderRadius: '50%', border: '3px solid #2e3c5960', height: 20, width: 20,
                                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                            marginLeft:'10px'
+                                            marginLeft: '10px'
                                         }} />
 
                                     <div
@@ -139,19 +139,20 @@ export const CustomTask = ({ data, setTaskState, currentTask }) => {
                                         }}>
                                         <p style={{
                                             fontSize: '1em', fontWeight: 700, color: '#2e3c5990',
+                                            wordBreak: 'break-word',
                                             textDecoration: task.finished ? 'line-through' : ''
                                         }}>{task.name}</p>
                                     </div>
 
                                     <Button
-                                            onClick={() => handleFavorite(task.id)}
-                                            style={{
-                                                display: 'flex',
-                                                alignItems: 'center', justifyContent: 'center',
-                                                marginRight:'10px'
-                                            }}
-                                            icon={task.favorite ? <AiFillStar size={20} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={20} style={{ color: '#2e3c5960' }} />}
-                                            type='ghost' />
+                                        onClick={() => handleFavorite(task.id)}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center', justifyContent: 'center',
+                                            marginRight: '10px'
+                                        }}
+                                        icon={task.favorite ? <AiFillStar size={20} style={{ color: '#2e3c59' }} /> : <AiOutlineStar size={20} style={{ color: '#2e3c5960' }} />}
+                                        type='ghost' />
 
                                 </div>
                             </>

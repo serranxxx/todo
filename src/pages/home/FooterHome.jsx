@@ -45,19 +45,21 @@ export const FooterHome = (props) => {
         getTasks(user, setMyTasks)
     }, [])
     return (
-        <Footer style={{
-            position: 'fixed', zIndex: 1, width: '100%', bottom: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            flexDirection: 'row',
-            height: '10vh', padding: '0 5% 0 5%',
-            // borderTop: '1px solid #463f3a20',
-            // boxShadow: '-10px 0px 10px #00000030',
-            backgroundColor: 'transparent'
-        }}>
+        <Footer
+            className='mobile'
+            style={{
+                position: 'fixed', zIndex: 1, width: '100%', bottom: 0,
+                alignItems: 'center', justifyContent: 'center',
+                flexDirection: 'row',
+                height: '10vh', padding: '0 5% 0 5%',
+                // borderTop: '1px solid #463f3a20',
+                // boxShadow: '-10px 0px 10px #00000030',
+                backgroundColor: 'transparent'
+            }}>
 
             <div style={{
                 width: '100%', height: '5vh',
-                marginBottom:'4vh',
+                marginBottom: '4vh',
                 // position: 'absolute', bottom: '0px',
                 backdropFilter: 'blur(16px)',
                 // background: `linear-gradient(to top, #2e3c5960, #2e3c5920)`,

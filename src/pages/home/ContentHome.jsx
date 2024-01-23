@@ -197,14 +197,14 @@ export const ContentHome = () => {
                 style={{
                     alignItems: 'center', justifyContent: 'flex-start',
                     flexDirection: 'column', marginTop: '10vh',
-                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '2vh'
+                    backgroundColor: `#e9efff`, position: 'relative', marginBottom: '10vh'
                 }}
             >
 
 
                 <div style={{
                     width: '93%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '2% 0 3% 0',
-                    zIndex:0
+                    zIndex: 0
                 }}>
                     <Radio.Group
                         onChange={(e) => setSelectedList(e.target.value)}
